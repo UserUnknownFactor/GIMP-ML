@@ -52,7 +52,7 @@ def new_session(model_name: str) -> BaseSession:
             with redirect_stdout(sys.stderr):
                 gdown.download(url, str(path), use_cookies=False)
         else:
-            hashing = hashlib.new("md5", path.read_bytes(), usedforsecurity=False)
+            hashing = hashlib.new("md5", Path(path).read_bytes(), usedforsecurity=False)
             if hashing.hexdigest() != md5:
                 with redirect_stdout(sys.stderr):
                     gdown.download(url, str(path), use_cookies=False)
