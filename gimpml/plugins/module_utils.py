@@ -12,7 +12,7 @@ def get_weight_path():
         try:
             weight_path = config["weight_path"]
         except:
-            error("no weights path found in config, using default:", weight_path)
+            print("no weights path found in config, using default:", weight_path)
             #pass
     return weight_path
 
